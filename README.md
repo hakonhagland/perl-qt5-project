@@ -1,6 +1,6 @@
 # Perl Qt5 module
 
-Open source contribution project.
+:camel: Open source contribution project :camel:
 
 ## Description
 - Continue work started
