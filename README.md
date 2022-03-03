@@ -5,8 +5,9 @@
   in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) (see
   the `qt5` branch)
 - The work seems to be abandoned, last commit was Nov 2018 and the
-  author [has not been active on GitHub](https://github.com/chrisburel?tab=overview&from=2022-03-01&to=2022-03-03) the last two years.
-
+  author's GitHub
+  [home page](https://github.com/chrisburel?tab=overview&from=2022-03-01&to=2022-03-03) shows
+  no activity the last two years.
 
 ## Aim
 - Upload a working Qt5 module to CPAN
