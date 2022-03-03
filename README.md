@@ -22,5 +22,5 @@
 
 ## How to contribute?
 
-If you are interested, contact the other contributors by submitting an
+If you are interested, contact the contributors (me) by submitting an
 issue or open a pull request here.
