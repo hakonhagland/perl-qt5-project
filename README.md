@@ -1,5 +1,7 @@
 # Perl Qt5 module
 
+Open source contribution project.
+
 ## Description
 - Continue work started
   in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) (see
