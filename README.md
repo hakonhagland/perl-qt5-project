@@ -16,4 +16,11 @@
 - Learn about [Perl xs](https://perldoc.perl.org/perlxs)
   and [Perl internals](https://perldoc.perl.org/perlapi)
 
+## List of contributors
 
+- Håkon Hægland
+
+## How to contribute?
+
+If you are interested, contact the other contributors by submitting an
+issue or open a pull request here.
