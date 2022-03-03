@@ -16,6 +16,8 @@
 - Learn about cmake
 - Learn about [Perl xs](https://perldoc.perl.org/perlxs)
   and [Perl internals](https://perldoc.perl.org/perlapi)
+- Have fun :smiley:
+- Contribute to the Perl ecosystem
 
 ## Source code repository
 
