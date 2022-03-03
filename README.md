@@ -16,6 +16,17 @@
 - Learn about [Perl xs](https://perldoc.perl.org/perlxs)
   and [Perl internals](https://perldoc.perl.org/perlapi)
 
+## Source code repository
+
+The work should be done
+in the `main` branch
+of [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt) which 
+is a fork
+of [chrisburel/perlqt](https://github.com/chrisburel/perlqt).
+- Note that the `main` branch
+  in [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt) is
+  a copy of the `qt5` branch of [chrisburel/perlqt](https://github.com/chrisburel/perlqt).
+
 ## List of contributors
 
 - Håkon Hægland
