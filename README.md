@@ -40,3 +40,7 @@ of [chrisburel/perlqt](https://github.com/chrisburel/perlqt).
 
 If you are interested, contact the contributors (me) by submitting an
 issue or open a pull request here.
+
+## Current status
+
+See the [Status](Status.md) page.
