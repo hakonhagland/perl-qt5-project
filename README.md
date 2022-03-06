@@ -12,6 +12,7 @@
   no activity the last two years.
 
 ## Aim
+
 - Upload a working Qt5 module to CPAN
 - Module should work on Linux, macOS, and Windows
 - Learn about Qt
@@ -36,11 +37,16 @@ of [chrisburel/perlqt](https://github.com/chrisburel/perlqt).
 
 - Håkon Hægland
 
-## How to contribute?
+## How to contribute/participate?
 
-If you are interested, contact the contributors (me) by submitting an
-issue or open a pull request here.
+If you are interested to work on this project, contact the
+contributors (me) by submitting an [issue](https://github.com/hakonhagland/perl-qt5-project/issues) or open a [pull request](https://github.com/hakonhagland/perl-qt5-project/pulls).
+
+Note: Newbies are very welcome :baby: Please use
+the
+[issue tracker](https://github.com/hakonhagland/perl-qt5-project/issues) if
+you have any question.
 
 ## Current status
 
-See the [Status](Status.md) page.
+For the current status of this project, see the [Status](Status.md) page.
