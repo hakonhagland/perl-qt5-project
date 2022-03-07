@@ -216,5 +216,72 @@ the previous build.
 ### install
 ```
 $ make
-$ make install
+$ sudo make install
+```
+## Building and installing qtdeclarative
+```
+$ export PREFIX=/opt/qt
+$ git clone -b v5.14.2 git@github.com:qt/qtdeclarative.git
+$ cd qtdeclarative
+$ git switch -c v5.14.2
+$ cat make.patch
+```
+```patch
+diff --git a/src/qmldebug/qqmlprofilerevent_p.h b/src/qmldebug/qqmlprofilerevent_p.h
+index a7e37d1964..3f13679a6a 100644
+--- a/src/qmldebug/qqmlprofilerevent_p.h
++++ b/src/qmldebug/qqmlprofilerevent_p.h
+@@ -49,6 +49,7 @@
+
+ #include <initializer_list>
+ #include <type_traits>
++#include <limits>
+
+ //
+ //  W A R N I N G
+```
+```
+$ git apply make.patch
+$ "$PREFIX"/qtbase/bin/qmake
+$ qmake
+```
+### Configure summary:
+```
+Qt QML:
+  QML network support .................... yes
+  QML debugging and profiling support .... yes
+  QML just-in-time compiler .............. yes
+  QML sequence object .................... yes
+  QML XML http request ................... yes
+  QML Locale ............................. yes
+Qt QML Models:
+  QML list model ......................... yes
+  QML delegate model ..................... yes
+Qt Quick:
+  Direct3D 12 ............................ no
+  AnimatedImage item ..................... yes
+  Canvas item ............................ yes
+  Support for Qt Quick Designer .......... yes
+  Flipable item .......................... yes
+  GridView item .......................... yes
+  ListView item .......................... yes
+  TableView item ......................... yes
+  Path support ........................... yes
+  PathView item .......................... yes
+  Positioner items ....................... yes
+  Repeater item .......................... yes
+  ShaderEffect item ...................... yes
+  Sprite item ............................ yes
+
+Qt is now configured for building. Just run 'make'.
+Once everything is built, you must run 'make install'.
+Qt will be installed into '/opt/qt/qtbase'.
+
+Prior to reconfiguration, make sure you remove any leftovers from
+the previous build.
+```
+### install
+```
+$ make
+$ sudo make install
 ```
