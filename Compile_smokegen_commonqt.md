@@ -285,3 +285,134 @@ the previous build.
 $ make
 $ sudo make install
 ```
+## Building and installing qtwebengine
+```
+
+$ sudo apt-get install libnss3-dev protobuf-compiler libre2-dev \
+     libsnappy-dev libjsoncpp-dev libwebp-dev libx11-xcb-dev
+$ git clone -b v5.14.2 git@github.com:qt/qtwebengine.git
+$ cd qtwebengine
+$ git switch -c v5.14.2
+$ git submodule update --init --progress
+$ cd src/3rdparty/chromium
+$ cat chromium.patch
+```
+```patch
+diff --git a/chromium/media/cdm/supported_cdm_versions.h b/chromium/media/cdm/supported_cdm_versions.h
+index 3f220da8c71..cddb2860f71 100644
+--- a/chromium/media/cdm/supported_cdm_versions.h
++++ b/chromium/media/cdm/supported_cdm_versions.h
+@@ -5,6 +5,7 @@
+ #ifndef MEDIA_CDM_SUPPORTED_CDM_VERSIONS_H_
+ #define MEDIA_CDM_SUPPORTED_CDM_VERSIONS_H_
+ 
++#include <cstddef>
+ #include <array>
+ 
+ #include "media/base/media_export.h"
+diff --git a/chromium/third_party/blink/renderer/build/scripts/rule_bison.py b/chromium/third_party/blink/renderer/build/scripts/rule_bison.py
+index f75e25fd23f..7e0767e951a 100755
+--- a/chromium/third_party/blink/renderer/build/scripts/rule_bison.py
++++ b/chromium/third_party/blink/renderer/build/scripts/rule_bison.py
+@@ -45,6 +45,19 @@ from utilities import abs
+ 
+ from blinkbuild.name_style_converter import NameStyleConverter
+ 
++def modify_file(path, prefix_lines, suffix_lines, replace_list=[]):
++    prefix_lines = map(lambda s: s + '\n', prefix_lines)
++    suffix_lines = map(lambda s: s + '\n', suffix_lines)
++    with open(path, 'r') as f:
++        old_lines = f.readlines()
++    for i in range(len(old_lines)):
++        for src, dest in replace_list:
++            old_lines[i] = old_lines[i].replace(src, dest)
++    new_lines = prefix_lines + old_lines + suffix_lines
++    with open(path, 'w') as f:
++        f.writelines(new_lines)
++
++
+ assert len(sys.argv) == 4 or len(sys.argv) == 5
+ 
+ inputFile = abs(sys.argv[1])
+@@ -115,3 +128,9 @@ print >>outputHFile, '#define %s' % headerGuard
+ print >>outputHFile, outputHContents
+ print >>outputHFile, '#endif  // %s' % headerGuard
+ outputHFile.close()
++
++common_replace_list = [(inputRoot + '.hh',
++                        inputRoot + '.h')]
++modify_file(
++    outputCpp, [], [],
++    replace_list=common_replace_list)
+diff --git a/chromium/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc b/chromium/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
+index b895f6d7ada..dc70527be3b 100644
+--- a/chromium/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
++++ b/chromium/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
+@@ -138,7 +138,7 @@ void InstallAlternateStackLocked() {
+   // SIGSTKSZ may be too small to prevent the signal handlers from overrunning
+   // the alternative stack. Ensure that the size of the alternative stack is
+   // large enough.
+-  static const unsigned kSigStackSize = std::max(16384, SIGSTKSZ);
++  static const unsigned kSigStackSize = std::max(16384L, SIGSTKSZ);
+ 
+   // Only set an alternative stack if there isn't already one, or if the current
+   // one is too small.
+diff --git a/chromium/third_party/perfetto/include/perfetto/base/task_runner.h b/chromium/third_party/perfetto/include/perfetto/base/task_runner.h
+index cf60401238f..da8a456619b 100644
+--- a/chromium/third_party/perfetto/include/perfetto/base/task_runner.h
++++ b/chromium/third_party/perfetto/include/perfetto/base/task_runner.h
+@@ -17,6 +17,7 @@
+ #ifndef INCLUDE_PERFETTO_BASE_TASK_RUNNER_H_
+ #define INCLUDE_PERFETTO_BASE_TASK_RUNNER_H_
+ 
++#include <cstdint>
+ #include <functional>
+ 
+ #include "perfetto/base/export.h"
+diff --git a/chromium/third_party/webrtc/call/rtx_receive_stream.h b/chromium/third_party/webrtc/call/rtx_receive_stream.h
+index 8ffa4400a9c..a389fc2a574 100644
+--- a/chromium/third_party/webrtc/call/rtx_receive_stream.h
++++ b/chromium/third_party/webrtc/call/rtx_receive_stream.h
+@@ -11,6 +11,7 @@
+ #ifndef CALL_RTX_RECEIVE_STREAM_H_
+ #define CALL_RTX_RECEIVE_STREAM_H_
+ 
++#include <cstdint>
+ #include <map>
+ 
+ #include "call/rtp_packet_sink_interface.h"
+diff --git a/chromium/third_party/webrtc/modules/audio_processing/aec3/clockdrift_detector.h b/chromium/third_party/webrtc/modules/audio_processing/aec3/clockdrift_detector.h
+index 22528c94892..cd5315a04ac 100644
+--- a/chromium/third_party/webrtc/modules/audio_processing/aec3/clockdrift_detector.h
++++ b/chromium/third_party/webrtc/modules/audio_processing/aec3/clockdrift_detector.h
+@@ -11,6 +11,7 @@
+ #ifndef MODULES_AUDIO_PROCESSING_AEC3_CLOCKDRIFT_DETECTOR_H_
+ #define MODULES_AUDIO_PROCESSING_AEC3_CLOCKDRIFT_DETECTOR_H_
+ 
++#include <cstddef>
+ #include <array>
+ 
+ namespace webrtc {
+diff --git a/chromium/third_party/webrtc/modules/video_coding/decoding_state.h b/chromium/third_party/webrtc/modules/video_coding/decoding_state.h
+index b87fb2d0345..ec972949d89 100644
+--- a/chromium/third_party/webrtc/modules/video_coding/decoding_state.h
++++ b/chromium/third_party/webrtc/modules/video_coding/decoding_state.h
+@@ -11,6 +11,7 @@
+ #ifndef MODULES_VIDEO_CODING_DECODING_STATE_H_
+ #define MODULES_VIDEO_CODING_DECODING_STATE_H_
+ 
++#include <cstdint>
+ #include <map>
+ #include <set>
+ #include <vector>
+```
+### compile and install
+```
+$ git apply chromium.patch
+$ cd ../../..
+export PREFIX=/opt/qt
+"$PREFIX"/qtbase/bin/qmake
+make
+sudo make install
+```
+
