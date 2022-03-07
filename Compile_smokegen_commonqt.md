@@ -285,6 +285,36 @@ the previous build.
 $ make
 $ sudo make install
 ```
+## Building and installing qtquickcontrols2
+```
+PREFIX=/opt/qt
+git clone -b v5.14.2 git@github.com:qt/qtquickcontrols2.git
+cd qtquickcontrols2
+git switch -c v5.14.2
+"$PREFIX"/qtbase/bin/qmake
+make
+sudo make install
+```
+## Building and installing qtwebchannel
+```
+PREFIX=/opt/qt
+git clone -b v5.14.2 git@github.com:qt/qtwebchannel.git
+cd qtwebchannel
+git switch -c v5.14.2
+"$PREFIX"/qtbase/bin/qmake
+make
+sudo make install
+```
+## Building and installing qtwebsockets
+```
+PREFIX=/opt/qt
+git clone -b v5.14.2 git@github.com:qt/qtwebsockets.git
+cd qtwebsockets
+git switch -c v5.14.2
+"$PREFIX"/qtbase/bin/qmake
+make
+sudo make install
+```
 ## Building and installing qtwebengine
 ```
 
@@ -415,4 +445,145 @@ export PREFIX=/opt/qt
 make
 sudo make install
 ```
+## Building and installing qtsvg
+```
+PREFIX=/opt/qt
+git clone -b v5.14.2 git@github.com:qt/qtsvg.git
+cd qtsvg
+git switch -c v5.14.2
+"$PREFIX"/qtbase/bin/qmake
+make
+sudo make install
+```
 
+## Building smokegen
+```
+$ git clone git@github.com:commonqt/smokegen.git
+$ cd smokegen
+$ mkdir build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=/opt/qt/smokegen -DQt5_DIR=/opt/qt/qtbase -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang-13 -DCMAKE_CXX_COMPILER=clang++-13 -DCMAKE_PREFIX_PATH=/opt/qt/qtbase/lib/cmake/Qt5
+-- The C compiler identification is Clang 13.0.0
+-- The CXX compiler identification is Clang 13.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /bin/clang-13 - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /bin/clang++-13 - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+-- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.12") 
+-- Found LLVM 13.0.0
+-- Using LLVMConfig.cmake in: /lib/llvm-13/cmake
+-- Linker detection: GNU ld
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/hakon/test/smokegen/build
+
+$ make -j12
+Scanning dependencies of target smokegen
+Scanning dependencies of target smokebase
+[  4%] Building CXX object smokebase/CMakeFiles/smokebase.dir/smokebase.cpp.o
+[  9%] Building CXX object CMakeFiles/smokegen.dir/astconsumer.cpp.o
+[ 13%] Building CXX object CMakeFiles/smokegen.dir/main.cpp.o
+[ 22%] Building CXX object CMakeFiles/smokegen.dir/astvisitor.cpp.o
+[ 27%] Building CXX object CMakeFiles/smokegen.dir/frontendaction.cpp.o
+[ 27%] Building CXX object CMakeFiles/smokegen.dir/defaultargvisitor.cpp.o
+[ 36%] Building CXX object CMakeFiles/smokegen.dir/options.cpp.o
+[ 36%] Building CXX object CMakeFiles/smokegen.dir/type.cpp.o
+[ 40%] Building CXX object CMakeFiles/smokegen.dir/ppcallbacks.cpp.o
+[ 45%] Linking CXX shared library ../bin/libsmokebase.so
+[ 45%] Built target smokebase
+Scanning dependencies of target smokeapi
+Scanning dependencies of target smokedeptool
+[ 50%] Building CXX object smokeapi/CMakeFiles/smokeapi.dir/main.cpp.o
+[ 54%] Building CXX object deptool/CMakeFiles/smokedeptool.dir/main.cpp.o
+/home/hakon/test/smokegen/type.cpp:221:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+1 warning generated.
+/home/hakon/test/smokegen/deptool/main.cpp:104:5: warning: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' is deprecated: Use std::sort [-Wdeprecated-declarations]
+    qSort(smokeModules.begin(), smokeModules.end(), smokeModuleLessThan);
+    ^
+/opt/qt/qtbase/include/QtCore/qalgorithms.h:181:1: note: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' has been explicitly marked deprecated here
+QT_DEPRECATED_X("Use std::sort") inline void qSort(RandomAccessIterator start, RandomAccessIterator end, LessThan lessThan)
+^
+/opt/qt/qtbase/include/QtCore/qglobal.h:294:33: note: expanded from macro 'QT_DEPRECATED_X'
+#  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+                                ^
+/opt/qt/qtbase/include/QtCore/qcompilerdetection.h:676:55: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+#    define Q_DECL_DEPRECATED_X(text) __attribute__ ((__deprecated__(text)))
+                                                      ^
+/home/hakon/test/smokegen/deptool/main.cpp:108:51: warning: 'toList' is deprecated: Use values() instead. [-Wdeprecated-declarations]
+        QList<Smoke*> sortedList = parents[smoke].toList();
+                                                  ^
+/opt/qt/qtbase/include/QtCore/qset.h:250:5: note: 'toList' has been explicitly marked deprecated here
+    QT_DEPRECATED_X("Use values() instead.")
+    ^
+/opt/qt/qtbase/include/QtCore/qglobal.h:294:33: note: expanded from macro 'QT_DEPRECATED_X'
+#  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+                                ^
+/opt/qt/qtbase/include/QtCore/qcompilerdetection.h:676:55: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+#    define Q_DECL_DEPRECATED_X(text) __attribute__ ((__deprecated__(text)))
+                                                      ^
+/home/hakon/test/smokegen/deptool/main.cpp:109:9: warning: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' is deprecated: Use std::sort [-Wdeprecated-declarations]
+        qSort(sortedList.begin(), sortedList.end(), smokeModuleLessThan);
+        ^
+/opt/qt/qtbase/include/QtCore/qalgorithms.h:181:1: note: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' has been explicitly marked deprecated here
+QT_DEPRECATED_X("Use std::sort") inline void qSort(RandomAccessIterator start, RandomAccessIterator end, LessThan lessThan)
+^
+/opt/qt/qtbase/include/QtCore/qglobal.h:294:33: note: expanded from macro 'QT_DEPRECATED_X'
+#  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+                                ^
+/opt/qt/qtbase/include/QtCore/qcompilerdetection.h:676:55: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+#    define Q_DECL_DEPRECATED_X(text) __attribute__ ((__depreecated__(text)))
+                                                      ^
+/home/hakon/test/smokegen/deptool/main.cpp:109:9: warning: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' is deprecated: Use std::sort [-Wdeprecated-declarations]
+        qSort(sortedList.begin(), sortedList.end(), smokeModuleLessThan);
+        ^
+/opt/qt/qtbase/include/QtCore/qalgorithms.h:181:1: note: 'qSort<QList<Smoke *>::iterator, bool (*)(Smoke *, Smoke *)>' has been explicitly marked deprecated here
+QT_DEPRECATED_X("Use std::sort") inline void qSort(RandomAccessIterator start, RandomAccessIterator end, LessThan lessThan)
+^
+/opt/qt/qtbase/include/QtCore/qglobal.h:294:33: note: expanded from macro 'QT_DEPRECATED_X'
+#  define QT_DEPRECATED_X(text) Q_DECL_DEPRECATED_X(text)
+                                ^
+/opt/qt/qtbase/include/QtCore/qcompilerdetection.h:676:55: note: expanded from macro 'Q_DECL_DEPRECATED_X'
+#    define Q_DECL_DEPRECATED_X(text) __attribute__ ((__deprecated__(text)))
+                                                      ^
+[ 59%] Linking CXX executable ../bin/smokeapi
+3 warnings generated.
+[ 63%] Linking CXX executable ../bin/smokedeptool
+[ 63%] Built target smokeapi
+[ 63%] Built target smokedeptool
+/home/hakon/test/smokegen/astvisitor.cpp:530:96: error: no matching member function for call to 'toString'
+                            tempArgType.setName(QString::fromStdString(args[i].getAsIntegral().toString(10)));
+                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/usr/lib/llvm-13/include/llvm/ADT/APSInt.h:82:8: note: candidate function not viable: no known conversion from 'int' to 'SmallVectorImpl<char> &' for 1st argument
+  void toString(SmallVectorImpl<char> &Str, unsigned Radix = 10) const {
+       ^
+/usr/lib/llvm-13/include/llvm/ADT/APInt.h:1741:8: note: candidate function not viable: requires at least 3 arguments, but 1 was provided
+  void toString(SmallVectorImpl<char> &Str, unsigned Radix, bool Signed,
+       ^
+/home/hakon/test/smokegen/astvisitor.cpp:530:72: error: reference to type 'const std::string' (aka 'const basic_string<char>') could not bind to an rvalue of type 'void'
+                            tempArgType.setName(QString::fromStdString(args[i].getAsIntegral().toString(10)));
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/qt/qtbase/include/QtCore/qstring.h:1506:58: note: passing argument to parameter 's' here
+inline QString QString::fromStdString(const std::string &s)
+                                                         ^
+/home/hakon/test/smokegen/main.cpp:272:21: error: no member named 'mapVirtualFile' in 'clang::tooling::ToolInvocation'
+                inv.mapVirtualFile(f->filename, { f->content, f->size });
+                ~~~ ^
+/home/hakon/test/smokegen/main.cpp:61:5: error: cannot use 'try' with exceptions disabled
+    try
+    ^
+2 errors generated.
+make[2]: *** [CMakeFiles/smokegen.dir/build.make:134: CMakeFiles/smokegen.dir/main.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+2 errors generated.
+make[2]: *** [CMakeFiles/smokegen.dir/build.make:95: CMakeFiles/smokegen.dir/astvisitor.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:295: CMakeFiles/smokegen.dir/all] Error 2
+make: *** [Makefile:149: all] Error 2
+```
