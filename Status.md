@@ -54,14 +54,6 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 - There is a currently an effort going on to build [Shinmera/qt-libs](https://github.com/Shinmera/qt-libs) with Qt5, see [this](https://github.com/commonqt/commonqt5/issues/2) issue. More information about qt-libs can be found [here](https://shinmera.github.io/qt-libs/).
 
 
-# Compiling smokegen from mcristg/smokegen
-
-- Refer to [mcristg/smokegen](https://github.com/mcristg/smokegen) and [commonqt/smokegen](https://github.com/commonqt/smokegen)
-
-## Building commonqt/smokegen
-
-See [Compile_smokegen_commonqt](Compile_smokegen_commonqt.md).
-
 # About SMOKE (it seems it does not support Qt5)
 
 - [KDE TechBase: Languages/Smoke](https://techbase.kde.org/Languages/Smoke)
