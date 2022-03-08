@@ -27,8 +27,8 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   It looks like it was trying to use
   Clang tooling libraries to port SMOKE bindings from Qt4 to Qt5, but
   maybe it became too involved, or something else
-  stopped the development. There are signs (see below) that most
-  language bining to Qt are having trouble with SMOKE and Qt5 and they
+  stopped the development? There are signs (see below) that most
+  language bindings to Qt are having trouble with SMOKE and Qt5 and they
   are trying to find alternative solutions.
 
 - However, [commonqt/smokegen](https://github.com/commonqt/smokegen)
@@ -43,8 +43,7 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   see [this](https://github.com/commonqt/smokegen/pull/1) pull
   request, [this](https://github.com/commonqt/commonqt5/issues/4)
   issue
-  and [this]([Compile_smokegen_commonqt](Compile_smokegen_commonqt.md)
-  page for building the prerequisites.
+  and [this](Compile_smokegen_commonqt.md) page for building the prerequisites.
 
 # More information about CommonQt
 
