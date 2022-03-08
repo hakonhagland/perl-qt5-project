@@ -72,28 +72,3 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 # clang tooling (used by smokegen)
 - [How To Setup Clang Tooling For LLVM](https://clang.llvm.org/docs/HowToSetupToolingForLLVM.html)
 
-# Compiling smokegen from chrisburel/smokegen
-
-- Refer to [chrisburel/smokegen](https://github.com/chrisburel/smokegen)
-- Current compile error:
-```
-$ cmake -DCMAKE_INSTALL_PREFIX=/opt/perlqt -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
-$ make -j12
-Scanning dependencies of target smokegen
-[  9%] Built target smokebase
-[ 27%] Built target smokeapi
-[ 27%] Built target smokedeptool
-[ 36%] Building CXX object CMakeFiles/smokegen.dir/frontendaction.cpp.o
-[ 36%] Building CXX object CMakeFiles/smokegen.dir/astvisitor.cpp.o
-[ 40%] Building CXX object CMakeFiles/smokegen.dir/main.cpp.o
-/home/hakon/test/smokegen/astvisitor.cpp:484:96: error: no matching member function for call to 'toString'
-                            tempArgType.setName(QString::fromStdString(args[i].getAsIntegral().toString(10)));
-                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
-/usr/lib/llvm-13/include/llvm/ADT/APSInt.h:82:8: note: candidate function not viable: no known conversion from 'int' to 'SmallVectorImpl<char> &' for 1st argument
-  void toString(SmallVectorImpl<char> &Str, unsigned Radix = 10) const {
-       ^
-/usr/lib/llvm-13/include/llvm/ADT/APInt.h:1741:8: note: candidate function not viable: requires at least 3 arguments, but 1 was provided
-  void toString(SmallVectorImpl<char> &Str, unsigned Radix, bool Signed,
-       ^
-
-```
