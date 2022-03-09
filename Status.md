@@ -20,7 +20,8 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 - Using the above `smokegen` when
   building
   [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt) gives
-  error _"Could not find Smoke QtCore"_, see build log [here](Compile_hh_perlqt_with_smokegen.md).
+  error _"Could not find Smoke QtCore"_, see build log
+  [here](logs/Compile_hh_perlqt_with_smokegen.md).
 
 - It appears that we first need to build something called
   `smokeqt`. The original version of smokeqt
@@ -36,7 +37,8 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 - However, building
   of [commonqt/smokeqt](https://github.com/commonqt/smokeqt)
   currently fails with
-  `'windows.h' file not found`, see build log [here](Compile_smokeqt_commonqt.md)
+  `'windows.h' file not found`, see build log
+  [here](logs/Compile_smokeqt_commonqt.md)
 # State of smokegen binary
 
 - The code in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) seems to depend
@@ -45,7 +47,7 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   [chrisburel/smokegen](https://github.com/chrisburel/smokegen). The
   latter seems to be abandoned September 2019 and the code currently
   does not compile on Ubuntu, see compile log
-  [here](Compile_smokegen_chrisburel.md).
+  [here](logs/Compile_smokegen_chrisburel.md).
   It looks like it was trying to use
   Clang tooling libraries to port SMOKE bindings from Qt4 to Qt5, but
   maybe it became too involved, or something else
@@ -65,7 +67,7 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   see [this](https://github.com/commonqt/smokegen/pull/1) pull
   request, [this](https://github.com/commonqt/commonqt5/issues/4)
   issue
-  and [this](Compile_smokegen_commonqt.md) page for building the prerequisites.
+  and [this](logs/Compile_smokegen_commonqt.md) page for building the prerequisites.
 
 # More information about CommonQt
 
