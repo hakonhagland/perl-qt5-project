@@ -12,9 +12,31 @@ repository which is direct fork of the `qt5` branch
 in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) does
 currently not build, see [this issue](https://github.com/chrisburel/perlqt/issues/1).
 
-- First thing it needs in order to build is the `smokegen` binary, see
-  below.
+- First thing it needs in order to build is the `smokegen` binary.
+  I am able to build `smokegen` using the version
+  in [commonqt/smokegen](https://github.com/commonqt/smokegen), see
+  below for more information.
 
+- Using the above `smokegen` when
+  building
+  [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt) gives
+  error _"Could not find Smoke QtCore"_, see build log [here](Compile_hh_perlqt_with_smokegen.md).
+
+- It appears that we first need to build something called
+  `smokeqt`. The original version of smokeqt
+  in [crisburel/smokeqt](https://github.com/chrisburel/smokeqt) depend
+  on [chrisburel/smokegen](https://github.com/chrisburel/smokegen)
+  which does not compile.
+
+- So I think we need to compile the version of smokeqt
+  in [commonqt/smokeqt](https://github.com/commonqt/smokeqt) which
+  depends on [commonqt/smokegen](https://github.com/commonqt/smokegen)
+  which I am now able to compile, see below.
+
+- However, building
+  of [commonqt/smokeqt](https://github.com/commonqt/smokeqt)
+  currently fails with
+  `'windows.h' file not found`, see build log [here]()
 # State of smokegen binary
 
 - The code in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) seems to depend
@@ -71,4 +93,3 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 
 # clang tooling (used by smokegen)
 - [How To Setup Clang Tooling For LLVM](https://clang.llvm.org/docs/HowToSetupToolingForLLVM.html)
-
