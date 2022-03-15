@@ -24,7 +24,8 @@ $ cmake -DCMAKE_PREFIX_PATH="/opt/qt/qtbase/lib/cmake/Qt5;/usr/lib/llvm-11/lib/c
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/hakon/test/smokeqt/build
-hakon@hakon-Precision-7530:~/test/smokeqt/build$ make -j12
+
+$ make -j12
 [  0%] Generating smokedata.cpp, x_1.cpp, x_2.cpp, x_3.cpp, x_4.cpp, x_5.cpp, x_6.cpp, x_7.cpp, x_8.cpp, x_9.cpp, x_10.cpp, x_11.cpp, x_12.cpp, x_13.cpp, x_14.cpp, x_15.cpp, x_16.cpp, x_17.cpp, x_18.cpp, x_19.cpp, x_20.cpp
 using generator "/opt/qt/smokegen/bin/../lib/smokegen/generator_smoke.so"
 didn't find file "/home/hakon/test/smokeqt/build/qtdefines"

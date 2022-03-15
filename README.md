@@ -25,7 +25,7 @@
 ## Source code repository
 
 The work should be done (by submitting pull requests)
-in the `main` branch
+to the `main` branch
 of [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt) which 
 is a fork
 of [chrisburel/perlqt](https://github.com/chrisburel/perlqt).

@@ -26,19 +26,20 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 - It appears that we first need to build something called
   `smokeqt`. The original version of smokeqt
   in [crisburel/smokeqt](https://github.com/chrisburel/smokeqt) depends
-  on [chrisburel/smokegen](https://github.com/chrisburel/smokegen)
-  which does not compile.
+  on [chrisburel/smokegen](https://github.com/chrisburel/smokegen),
+  and the latter does not compile.
 
-- So I think we need to compile the version of smokeqt
+- So I think we need to first try compile the version of smokeqt
   in [commonqt/smokeqt](https://github.com/commonqt/smokeqt) which
-  depends on [commonqt/smokegen](https://github.com/commonqt/smokegen)
-  which I am now able to compile, see below.
+  depends on [commonqt/smokegen](https://github.com/commonqt/smokegen),
+  and the latter I am now able to compile, see below.
 
 - However, building
   of [commonqt/smokeqt](https://github.com/commonqt/smokeqt)
   currently fails with
   `'windows.h' file not found`, see build log
   [here](logs/Compile_smokeqt_commonqt.md)
+
 # State of smokegen binary
 
 - The code in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) seems to depend
