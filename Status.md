@@ -47,6 +47,11 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   see
   [this](https://github.com/hakonhagland/smokegen/commit/2fd6cbd16debb9a70ad48e4eef1bf170e2a75438) commit.
 
+- Recompiling `smokegen` with the latter change, and then trying to
+  rebuild [commonqt/smokeqt](https://github.com/commonqt/smokeqt) with
+  that version of `smokegen` now give a segmentation fault, see build
+  log [here](logs/Compile_smokeqt:commonqt2.md).
+  
 # State of smokegen binary
 
 - The code in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) seems to depend

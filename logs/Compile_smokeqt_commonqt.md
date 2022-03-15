@@ -1,4 +1,3 @@
-
 ```
 $ git clone git@github.com:commonqt/smokeqt.git
 $ cd smokeqt
