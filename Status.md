@@ -50,7 +50,7 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 - Recompiling `smokegen` with the latter change, and then trying to
   rebuild [commonqt/smokeqt](https://github.com/commonqt/smokeqt) with
   that version of `smokegen` now give a segmentation fault, see build
-  log [here](logs/Compile_smokeqt:commonqt2.md).
+  log [here](logs/Compile_smokeqt_commonqt2.md).
   
 # State of smokegen binary
 
