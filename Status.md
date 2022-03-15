@@ -29,7 +29,7 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   on [chrisburel/smokegen](https://github.com/chrisburel/smokegen),
   and the latter does not compile.
 
-- So I think we need to first try compile the version of smokeqt
+- So I think we first need to try compile the version of smokeqt
   in [commonqt/smokeqt](https://github.com/commonqt/smokeqt) which
   depends on [commonqt/smokegen](https://github.com/commonqt/smokegen),
   and the latter I am now able to compile, see below.
@@ -39,6 +39,13 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
   currently fails with
   `'windows.h' file not found`, see build log
   [here](logs/Compile_smokeqt_commonqt.md)
+
+- After advice from @luismbo,
+  see [this](https://github.com/commonqt/commonqt5/issues/5) issue I
+  tried to patch `smokegen` to not add the `windows.h` header when
+  compiling on Linux,
+  see
+  [this](https://github.com/hakonhagland/smokegen/commit/2fd6cbd16debb9a70ad48e4eef1bf170e2a75438) commit.
 
 # State of smokegen binary
 
