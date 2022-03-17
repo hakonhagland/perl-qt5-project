@@ -10,7 +10,7 @@
 in [hakonhagland/perlqt](https://github.com/hakonhagland/perlqt)
 repository which is direct fork of the `qt5` branch
 in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) does
-currently not build, see [this issue](https://github.com/chrisburel/perlqt/issues/1).
+not currently build, see [this issue](https://github.com/chrisburel/perlqt/issues/1).
 
 - First thing it needs in order to build is the `smokegen` binary.
   I am able to build `smokegen` using the version
@@ -31,12 +31,12 @@ currently not build, see [this issue](https://github.com/chrisburel/perlqt/issue
 
 - So I think we first need to try compile the version of smokeqt
   in [commonqt/smokeqt](https://github.com/commonqt/smokeqt) which
-  depends on [commonqt/smokegen](https://github.com/commonqt/smokegen),
-  and the latter I am now able to compile, see below.
+  depends on [commonqt/smokegen](https://github.com/commonqt/smokegen).
+  The latter does now able to compile, see below.
 
-- However, building
-  of [commonqt/smokeqt](https://github.com/commonqt/smokeqt)
-  currently fails with
+- However, trying to build
+  [commonqt/smokeqt](https://github.com/commonqt/smokeqt)
+  fails with
   `'windows.h' file not found`, see build log
   [here](logs/Compile_smokeqt_commonqt.md)
 
