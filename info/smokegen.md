@@ -9,12 +9,10 @@
   `-config` option, as in
 ```
 smokegen -config /usr/share/smokegen/kde-config.xml
-
 ```
 - You can extend options, like include dirs, by giving additional
   parameters on the command line. For example, you can give additional
   include dirs with the `-I` flag:
-
 ```
 smokegen -config /usr/share/smokegen/kde-config.xml -I /usr/include/MyFancyApp
 smokegen --help will show a complete list of possible options.
