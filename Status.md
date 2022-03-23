@@ -34,7 +34,7 @@ not currently build, see [this issue](https://github.com/chrisburel/perlqt/issue
   depends on [commonqt/smokegen](https://github.com/commonqt/smokegen).
   The latter does now compile, see below.
 
-- More information about command line useage of the `smokegen` binary
+- More information about command line usage of the `smokegen` binary
   can be found [here](info/smokegen.md)
 
 - However, trying to build
