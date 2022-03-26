@@ -42,7 +42,7 @@ Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
 ```
 # Backtrace links to source
 - `in main(argc=14, argv=0x7fffffffb078) at /home/hakon/test/smokegen/main.cpp:287` :
-  [main.cpp#L287](https://github.com/hakonhagland/smokegen/blob/hwin32/main.cpp#L287)
+  [main.cpp:287](https://github.com/hakonhagland/smokegen/blob/hwin32/main.cpp#L287)
 - `in generate() at /generators/smoke/generator_smoke.cpp:239` :
   [generators/smoke/generator_smoke.cpp:239](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/generator_smoke.cpp#L239)
 - `in SmokeDataFile::SmokeDataFile(this=0x7fffffff9d40) at generators/smoke/writeSmokeDataFile.cpp:53` :
@@ -55,4 +55,7 @@ Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
 
 - On line 210, we have `const Class* klass = getClass();` where `getClass()` is defined at [type.h:421](https://github.com/hakonhagland/smokegen/blob/hwin32/type.h#L421):
 
-         Class* getClass() const { return m_class; }
+        Class* getClass() const { return m_class; }
+
+- Note that the first three times `getClass()` is called, it returns `0x0` (i.e. `nullptr`), but the forth time it returns `0x400000000` which is not a valid pointer to a class.
+
