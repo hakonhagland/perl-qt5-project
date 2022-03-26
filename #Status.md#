@@ -56,7 +56,7 @@ not currently build, see [this issue](https://github.com/chrisburel/perlqt/issue
   log [here](logs/Compile_smokeqt_commonqt2.md).
 
 - Running the above crashing `smokegen` call with gdb
-  reveal [some more](gdb/smokegen1.md) information.
+  reveals [some more](gdb/smokegen1.md) information.
 
 # State of smokegen binary
 
