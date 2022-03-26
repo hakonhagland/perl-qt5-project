@@ -28,20 +28,15 @@ Generating SMOKE sources...
 preparing SMOKE data [qtcore]
 
 Program received signal SIGILL, Illegal instruction.
-Type::isAssignable (this=0x2ee0e38) at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/type.cpp:211
+Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
 211	    if (klass)
 (gdb) bt
-#0  Type::isAssignable (this=0x2ee0e38) at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/type.cpp:211
-#1  0x00007ffff48c520d in Util::addAccessorMethods (field=..., usedTypes=0x7fffffff9d70)
-    at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/generators/smoke/helpers.cpp:811
-#2  0x00007ffff48c1a59 in Util::preparse (usedTypes=0x7fffffff9d70, superClasses=0x7fffffff99e0, keys=...)
-    at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/generators/smoke/helpers.cpp:349
-#3  0x00007ffff48a9104 in SmokeDataFile::SmokeDataFile (this=0x7fffffff9d50)
-    at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/generators/smoke/writeSmokeDataFile.cpp:53
-#4  0x00007ffff4895a12 in generate ()
-    at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/generators/smoke/generator_smoke.cpp:239
-#5  0x0000000000a651e3 in main (argc=14, argv=0x7fffffffb088)
-    at /home/hakon/pcl/data/p/desktop/emacs/desktop/scratch/common-lisp--packages--common-qt-smokegen--fork/smokegen/main.cpp:287
+#0  Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
+#1  0x00007ffff48c520d in Util::addAccessorMethods (field=..., usedTypes=0x7fffffff9d60) at /home/hakon/test/smokegen/generators/smoke/helpers.cpp:811
+#2  0x00007ffff48c1a59 in Util::preparse (usedTypes=0x7fffffff9d60, superClasses=0x7fffffff99d0, keys=...) at /home/hakon/test/smokegen/generators/smoke/helpers.cpp:349
+#3  0x00007ffff48a9104 in SmokeDataFile::SmokeDataFile (this=0x7fffffff9d40) at /home/hakon/test/smokegen/generators/smoke/writeSmokeDataFile.cpp:53
+#4  0x00007ffff4895a12 in generate () at /home/hakon/test/smokegen/generators/smoke/generator_smoke.cpp:239
+#5  0x0000000000a651e3 in main (argc=14, argv=0x7fffffffb078) at /home/hakon/test/smokegen/main.cpp:287
 (gdb) 
 
 ```
