@@ -47,5 +47,6 @@ Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
   [generators/smoke/generator_smoke.cpp:239](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/generator_smoke.cpp#L239)
 - `in SmokeDataFile::SmokeDataFile(this=0x7fffffff9d40) at generators/smoke/writeSmokeDataFile.cpp:53` :
   [generators/smoke/writeSmokeDataFile.cpp:53](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/writeSmokeDataFile.cpp#L53)
-  
-
+- `in Util::preparse(usedTypes=0x7fffffff9d60, superClasses=0x7fffffff99d0, keys=...) at generators/smoke/helpers.cpp:349` : [generators/smoke/helpers.cpp:349](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/helpers.cpp#L349)
+- `in Util::addAccessorMethods(field=..., usedTypes=0x7fffffff9d60) at generators/smoke/helpers.cpp:811` : [generators/smoke/helpers.cpp:811](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/helpers.cpp#L811)
+- `in Type::isAssignable(this=0x2ee0e38) at type.cpp:211` : [type.cpp:211](https://github.com/hakonhagland/smokegen/blob/hwin32/type.cpp#L211)
