@@ -55,4 +55,4 @@ Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
 
 - On line 210, we have `const Class* klass = getClass();` where `getClass()` is defined at [type.h:421](https://github.com/hakonhagland/smokegen/blob/hwin32/type.h#L421):
 
-     Class* getClass() const { return m_class; }
+         Class* getClass() const { return m_class; }
