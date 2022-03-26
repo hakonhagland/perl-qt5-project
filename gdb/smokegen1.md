@@ -37,6 +37,15 @@ Type::isAssignable (this=0x2ee0e38) at /home/hakon/test/smokegen/type.cpp:211
 #3  0x00007ffff48a9104 in SmokeDataFile::SmokeDataFile (this=0x7fffffff9d40) at /home/hakon/test/smokegen/generators/smoke/writeSmokeDataFile.cpp:53
 #4  0x00007ffff4895a12 in generate () at /home/hakon/test/smokegen/generators/smoke/generator_smoke.cpp:239
 #5  0x0000000000a651e3 in main (argc=14, argv=0x7fffffffb078) at /home/hakon/test/smokegen/main.cpp:287
-(gdb) 
+(gdb)
 
 ```
+# Backtrace links to source
+- `in main(argc=14, argv=0x7fffffffb078) at /home/hakon/test/smokegen/main.cpp:287` :
+  [main.cpp#L287](https://github.com/hakonhagland/smokegen/blob/hwin32/main.cpp#L287)
+- `in generate() at /generators/smoke/generator_smoke.cpp:239` :
+  [generators/smoke/generator_smoke.cpp:239](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/generator_smoke.cpp#L239)
+- `in SmokeDataFile::SmokeDataFile(this=0x7fffffff9d40) at generators/smoke/writeSmokeDataFile.cpp:53` :
+  [generators/smoke/writeSmokeDataFile.cpp:53](https://github.com/hakonhagland/smokegen/blob/hwin32/generators/smoke/writeSmokeDataFile.cpp#L53)
+  
+
