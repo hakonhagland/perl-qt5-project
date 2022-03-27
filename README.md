@@ -3,13 +3,12 @@
 :camel: Open source contribution project :camel:
 
 ## Description
-- Continue the great work started
-  in [chrisburel/perlqt](https://github.com/chrisburel/perlqt) (see
-  the `qt5` branch)
-- However, the work seems to be abandoned, last commit was Nov 2018 and the
+- Continue unfinished the work
+  by [chrisburel/perlqt](https://github.com/chrisburel/perlqt) (see   the `qt5` branch)
+- The project seems to have been abandoned in 2018, last commit was Nov 2018 and the
   author's GitHub
   [home page](https://github.com/chrisburel?tab=overview&from=2022-03-01&to=2022-03-03) shows
-  no activity over the last two years.
+  no activity since 2020.
 
 ## Aim
 
